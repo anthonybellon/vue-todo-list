@@ -1,29 +1,14 @@
-<script lang="ts">
-import { defineComponent, computed } from "vue";
+<script setup lang="ts">
+import { computed } from "vue";
 import { useTodoStore } from "../stores/todo";
 import TodoItem from "./TodoItem.vue";
 import TodoInput from "./TodoInput.vue";
 import { Button } from "./ui/button";
 
-export default defineComponent({
-  name: "TodoList",
-  components: {
-    TodoItem,
-    TodoInput,
-    Button,
-  },
-  setup() {
-    const todoStore = useTodoStore();
+const todoStore = useTodoStore();
 
-    const hasCompletedTodos = computed(() => {
-      return todoStore.todos.some((todo) => todo.completed);
-    });
-
-    return {
-      todoStore,
-      hasCompletedTodos,
-    };
-  },
+const hasCompletedTodos = computed(() => {
+  return todoStore.todos.some((todo) => todo.completed);
 });
 </script>
 

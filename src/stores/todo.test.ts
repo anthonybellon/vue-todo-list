@@ -54,4 +54,12 @@ describe("Todo Store", () => {
     const savedTodos = JSON.parse(localStorage.getItem("todos") || "[]");
     expect(savedTodos).toEqual(store.todos);
   });
+
+  it("edits a todo", () => {
+    const store = useTodoStore();
+    store.addTodo("Test todo");
+    const todo = store.todos[0];
+    store.updateTodo({ ...todo, text: "Updated todo" });
+    expect(store.todos[0].text).toBe("Updated todo");
+  });
 });

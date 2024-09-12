@@ -23,7 +23,7 @@ export const useTodoStore = defineStore("todo", {
     updateTodo(todo: Todo) {
       const index = this.todos.findIndex((t) => t.id === todo.id);
       if (index !== -1) {
-        this.todos[index] = todo;
+        this.todos[index] = { ...this.todos[index], ...todo };
         this.saveTodos();
       }
     },
