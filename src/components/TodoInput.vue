@@ -38,6 +38,8 @@ export default defineComponent({
       aria-label="New todo input"
       class="flex-grow"
     />
-    <Button @click="addTodo" variant="default"> Add </Button>
+    <Button @click="addTodo" variant="default" class="hover:bg-primary/80">
+      Add
+    </Button>
   </div>
 </template>
