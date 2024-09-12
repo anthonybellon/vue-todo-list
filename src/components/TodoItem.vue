@@ -1,13 +1,11 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { useTodoStore } from "../stores/todo";
-import { Button } from "./ui/button";
 import { Checkbox } from "./ui/checkbox";
 
 export default defineComponent({
   name: "TodoItem",
   components: {
-    Button,
     Checkbox,
   },
   props: {
@@ -31,13 +29,8 @@ export default defineComponent({
       todoStore.updateTodo({ ...props, completed: !props.completed });
     };
 
-    const deleteTodo = () => {
-      todoStore.deleteTodo(props.id);
-    };
-
     return {
       toggleComplete,
-      deleteTodo,
     };
   },
 });
@@ -59,13 +52,5 @@ export default defineComponent({
     >
       {{ text }}
     </span>
-    <Button
-      @click="deleteTodo"
-      variant="ghost"
-      size="sm"
-      class="text-destructive hover:text-destructive-foreground hover:bg-destructive/10"
-    >
-      Delete
-    </Button>
   </li>
 </template>

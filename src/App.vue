@@ -1,18 +1,21 @@
 <script setup lang="ts">
-import { useTodoStore } from './stores/todo'
-import { onMounted } from 'vue'
-import TodoListVue from './components/TodoList.vue'
+import { useTodoStore } from "./stores/todo";
+import { onMounted } from "vue";
+import TodoListVue from "./components/TodoList.vue";
 
-const todoStore = useTodoStore()
+const todoStore = useTodoStore();
 
 onMounted(() => {
-  todoStore.loadTodos()
-})
+  todoStore.loadTodos();
+});
 </script>
 
 <template>
-  <div id="app">
-    <TodoListVue />
+  <div
+    id="app"
+    class="min-h-screen flex items-center justify-center bg-background p-4"
+  >
+    <TodoListVue class="w-full max-w-md" />
   </div>
 </template>
 
@@ -23,6 +26,5 @@ onMounted(() => {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
