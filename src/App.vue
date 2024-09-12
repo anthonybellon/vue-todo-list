@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useTodoStore } from "./stores/todo";
 import { onMounted } from "vue";
-import TodoListVue from "./components/TodoList.vue";
+import TodoList from "./components/TodoList.vue";
 
 const todoStore = useTodoStore();
 
@@ -15,7 +15,7 @@ onMounted(() => {
     id="app"
     class="min-h-screen flex items-center justify-center bg-background p-4"
   >
-    <TodoListVue class="w-full max-w-md" />
+    <TodoList class="w-full max-w-md" />
   </div>
 </template>
 
