@@ -37,7 +37,7 @@ export default defineComponent({
       Todo List
     </h1>
     <TodoInput class="mb-4 sm:mb-6" />
-    <div class="flex-grow overflow-y-auto mb-4">
+    <div class="flex-grow overflow-y-auto mb-4 max-h-[300px]">
       <ul
         v-if="todoStore.todos.length"
         aria-label="Todo list"
